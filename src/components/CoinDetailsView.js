@@ -167,6 +167,9 @@ class CoinDetailsView extends React.Component {
                         <Grid item xs={12}>
                             <CoinChart cid={coin.id}/>
                         </Grid>
+                        <Grid item xs={12}>
+                            <h1 className="section-title">Market Data</h1>
+                        </Grid>
                         {renderDatum('current price', `$${coin.market_data.current_price['usd']}`)}
                         {renderDatum('Price change 24hr', `${coin.market_data.price_change_24h_in_currency['usd']}`)}
                         {renderDatum('Price change 7d', `${coin.market_data.price_change_percentage_7d_in_currency['usd']}`)}
@@ -184,6 +187,9 @@ class CoinDetailsView extends React.Component {
                     </Grid>
                 </Paper>
                 <Paper className="about coin-container">
+                    <Grid item xs={12}>
+                            <h1 className="section-title">About</h1>
+                    </Grid>
                     <Grid container spacing={2}>
                         {renderDescription(coin.description['en'])}                        
                         {renderSocial('fb',  `https://www.facebook.com/{coin.links.facebook_username}`, coin.community_data.facebook_likes)}
